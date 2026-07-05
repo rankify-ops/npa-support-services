@@ -317,6 +317,7 @@ img,svg{max-width:100%;display:block}
   .hero-badges{display:grid;grid-template-columns:1fr 1fr}
   .hero-badge{width:100%}
   .hero-orchat{white-space:nowrap;font-size:clamp(.62rem,3.3vw,.9rem)}
+  .hero-trust{white-space:nowrap;font-size:clamp(.55rem,3vw,.78rem);letter-spacing:.02em}
   .sec-c{text-align:left;margin-left:0;margin-right:0}
   .sec-c .sec-sub{margin-left:0;margin-right:0}
   .cta-card{text-align:left}

@@ -314,6 +314,7 @@ img,svg{max-width:100%;display:block}
   .hero-badges{display:grid;grid-template-columns:1fr 1fr}
   .hero-badge{width:100%}
   .hero-orchat{white-space:nowrap;font-size:clamp(.62rem,3.3vw,.9rem)}
-  .trust-strip .ctr{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;align-items:start;justify-content:stretch}
-  .trust-item{align-items:flex-start}
+  .trust-strip .ctr{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px;align-items:start;justify-content:stretch}
+  .trust-item{align-items:flex-start;font-size:.72rem;gap:7px;line-height:1.35}
+  .trust-item svg{width:15px;height:15px;margin-top:1px}
 }

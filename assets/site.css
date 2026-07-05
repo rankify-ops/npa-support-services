@@ -298,7 +298,7 @@ img,svg{max-width:100%;display:block}
   .hero-copy{order:1}
   .hero-visual{order:2;max-width:460px;margin-top:8px}
   .hero-ndis{display:none}
-  .hero-ndis-mob{display:block;height:84px;width:auto;margin-bottom:20px}
+  .hero-ndis-mob{display:block;height:56px;width:auto;align-self:flex-start;margin-bottom:18px}
   .hero-trust{display:none}
   .about-photo{max-width:380px}
   .svc-grid{grid-template-columns:1fr;gap:18px}

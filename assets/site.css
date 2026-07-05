@@ -256,7 +256,8 @@ img,svg{max-width:100%;display:block}
   .nav-r .nav-cta{display:none}
   .mob-tog{display:block}
   .hero-split,.fresh-grid,.about-grid{grid-template-columns:1fr}
-  .hero-visual{max-width:460px;margin-top:8px}
+  .hero-copy{order:1}
+  .hero-visual{order:2;max-width:460px;margin-top:8px}
   .about-photo{max-width:380px}
   .svc-grid{grid-template-columns:1fr;gap:18px}
   .footer-grid{grid-template-columns:1fr 1fr}

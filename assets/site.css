@@ -127,8 +127,9 @@ img,svg{max-width:100%;display:block}
 
 /* hero visual card */
 .hero-visual{position:relative}
-.hero-ndis{margin-bottom:18px}
+.hero-ndis{margin-bottom:18px;display:flex;align-items:center;gap:32px}
 .hero-ndis img{height:120px;width:auto;display:block}
+.hero-ndis .hero-illust{height:150px}
 .hero-ndis-mob{display:none}
 .hero-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--r);padding:36px;backdrop-filter:blur(16px) saturate(1.5);-webkit-backdrop-filter:blur(16px) saturate(1.5);box-shadow:var(--shadow-l)}
 .hero-card-eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:2px;color:var(--brand);font-weight:700;margin-bottom:8px}

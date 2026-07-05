@@ -299,7 +299,6 @@ img,svg{max-width:100%;display:block}
   .hero-visual{order:2;max-width:460px;margin-top:8px}
   .hero-ndis{display:none}
   .hero-ndis-mob{display:block;height:64px;width:auto;margin:0;align-self:center;justify-self:center}
-  .hero-trust{display:none}
   .about-photo{max-width:380px}
   .svc-grid{grid-template-columns:1fr;gap:18px}
   .steps{grid-template-columns:1fr;gap:16px}

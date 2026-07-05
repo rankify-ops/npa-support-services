@@ -296,9 +296,11 @@ img,svg{max-width:100%;display:block}
   .nav-l{display:none}
   .nav-r .nav-cta{display:none}
   .mob-tog{display:flex}
-  .hero-split,.fresh-grid,.about-grid{grid-template-columns:1fr}
+  .hero-split{grid-template-columns:1fr;gap:16px}
+  .fresh-grid,.about-grid{grid-template-columns:1fr}
   .hero-copy{order:1}
-  .hero-visual{order:2;max-width:460px;margin-top:8px}
+  .hero-orchat{margin-bottom:0}
+  .hero-visual{order:2;max-width:460px;margin-top:0}
   .hero-ndis{gap:16px;margin-bottom:14px;align-items:center}
   .hero-ndis img,.hero-ndis .hero-illust{flex:1 1 0;width:50%;min-width:0;height:auto}
   .about-photo{max-width:380px}

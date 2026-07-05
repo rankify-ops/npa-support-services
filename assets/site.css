@@ -267,5 +267,7 @@ img,svg{max-width:100%;display:block}
   .about-creds{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .eoi .ctr{flex-direction:column;align-items:flex-start}
-  .hero-btns .btn-p,.hero-btns .btn-s{flex:1;justify-content:center}
+  .hero-btns{flex-direction:column;align-items:stretch}
+  .hero-btns .btn-p,.hero-btns .btn-s{width:100%;justify-content:center;white-space:nowrap}
+  .cta-btns .btn-p,.cta-btns .btn-s{width:100%;justify-content:center;white-space:nowrap}
 }

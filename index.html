@@ -348,8 +348,62 @@
   </div>
 </section>
 
+<!-- ============ CONTACT FORM ============ -->
+<section class="sec sec-cream" id="contact">
+  <div class="ctr">
+    <div class="sec-c fade">
+      <span class="sec-tag">Contact us</span>
+      <h2 class="sec-t">Send us a message</h2>
+      <p class="sec-sub">Questions, referrals, feedback or just want to talk something through — send a message and we’ll get back to you.</p>
+    </div>
+    <form class="contact-form fade" id="contactForm" novalidate>
+      <input type="hidden" name="access_key" value="cd192ee0-db9c-4279-b686-ec1e98804daf">
+      <input type="hidden" name="subject" value="New enquiry — NPA Support Services website">
+      <input type="hidden" name="from_name" value="NPA Support Services Website">
+      <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off">
+      <div class="cf-row">
+        <div class="cf-field">
+          <label for="cf-name">Name *</label>
+          <input type="text" id="cf-name" name="name" required autocomplete="name" placeholder="Your name">
+        </div>
+        <div class="cf-field">
+          <label for="cf-email">Email *</label>
+          <input type="email" id="cf-email" name="email" required autocomplete="email" placeholder="you@email.com">
+        </div>
+      </div>
+      <div class="cf-row">
+        <div class="cf-field">
+          <label for="cf-phone">Phone</label>
+          <input type="tel" id="cf-phone" name="phone" autocomplete="tel" placeholder="Optional">
+        </div>
+        <div class="cf-field">
+          <label for="cf-topic">I’m enquiring about</label>
+          <select id="cf-topic" name="enquiry_type">
+            <option>General enquiry</option>
+            <option>Positive Behaviour Support</option>
+            <option>Support Coordination</option>
+            <option>Specialist Support Coordination</option>
+            <option>Making a referral</option>
+            <option>Working with NPA</option>
+            <option>Feedback, compliment or complaint</option>
+          </select>
+        </div>
+      </div>
+      <div class="cf-field">
+        <label for="cf-msg">Message *</label>
+        <textarea id="cf-msg" name="message" rows="5" required placeholder="How can we help?"></textarea>
+      </div>
+      <p class="cf-note">NPA Support Services is not an emergency service. If there is an immediate risk of harm, please call 000.</p>
+      <button type="submit" class="btn-p cf-submit">Send Message
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="18" height="18"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="cf-status" id="cfStatus" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
 <!-- ============ FOOTER ============ -->
-<footer class="footer" id="contact">
+<footer class="footer">
   <div class="ctr">
     <div class="footer-grid">
       <div class="footer-brand">

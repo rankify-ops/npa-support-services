@@ -193,6 +193,18 @@ img,svg{max-width:100%;display:block}
 .callout-alert p{font-size:.92rem;color:var(--g700);line-height:1.6;margin:0}
 .callout-alert strong{color:#b3532e}
 
+/* ================ EXTERNAL AGENCIES ================ */
+.agency-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.agency-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--rs);padding:22px 24px;backdrop-filter:blur(12px) saturate(1.4);-webkit-backdrop-filter:blur(12px) saturate(1.4);box-shadow:var(--shadow-s)}
+.agency-card h4{font-size:1rem;color:var(--forest);margin-bottom:6px}
+.agency-card .ag-when{font-size:.84rem;color:var(--g600);line-height:1.55;margin-bottom:10px}
+.agency-card ul{list-style:none;display:flex;flex-direction:column;gap:5px}
+.agency-card li{font-size:.84rem;color:var(--g700);display:flex;gap:8px;align-items:flex-start;line-height:1.5}
+.agency-card li svg{width:14px;height:14px;color:var(--brand);flex-shrink:0;margin-top:3px}
+.agency-card a{color:var(--brand-dark);font-weight:600}
+.agency-card a:hover{text-decoration:underline}
+@media(max-width:720px){.agency-grid{grid-template-columns:1fr}}
+
 /* ================ FRESH START (feature band) ================ */
 .fresh{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--forest) 0%,var(--forest-2) 100%);color:#fff}
 .fresh::before{content:'';position:absolute;inset:0;pointer-events:none;background:

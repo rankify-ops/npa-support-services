@@ -294,6 +294,15 @@ img,svg{max-width:100%;display:block}
 .cf-field textarea{resize:vertical;min-height:120px}
 .cf-field input:focus,.cf-field select:focus,.cf-field textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-glow)}
 .cf-note{font-size:.78rem;color:var(--g500);margin-bottom:18px;line-height:1.5}
+.cf-legend{font-size:.78rem;text-transform:uppercase;letter-spacing:1.8px;color:var(--brand);font-weight:800;margin:26px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--g200)}
+.cf-legend:first-of-type{margin-top:0}
+.cf-checks{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.cf-check{display:flex;align-items:flex-start;gap:10px;font-size:.92rem;color:var(--g700);cursor:pointer;line-height:1.45}
+.cf-check input{width:18px;height:18px;margin-top:2px;accent-color:var(--brand);flex-shrink:0;cursor:pointer}
+.cf-consent{background:var(--brand-light);border:1px solid rgba(111,143,63,.25);border-radius:var(--rs);padding:16px 18px;margin-bottom:18px}
+.cf-consent .cf-check{font-weight:600;color:var(--forest)}
+.cf-docs-note{background:rgba(255,255,255,.75);border:1px dashed var(--g300);border-radius:var(--rs);padding:16px 18px;margin-bottom:18px;font-size:.85rem;color:var(--g600);line-height:1.6}
+.cf-docs-note strong{color:var(--forest)}
 .cf-submit{width:100%;justify-content:center}
 .cf-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
 .cf-status{margin-top:14px;font-size:.92rem;font-weight:600;text-align:center;display:none}

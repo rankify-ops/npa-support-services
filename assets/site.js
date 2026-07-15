@@ -53,26 +53,40 @@
     if (target && target === here) a.classList.add('active');
   });
 
-  // Contact form (Web3Forms)
-  var form = document.getElementById('contactForm');
-  if (form) {
-    var status = document.getElementById('cfStatus');
+  // Web3Forms submission for any form marked data-w3form
+  document.querySelectorAll('form[data-w3form]').forEach(function (form) {
+    var status = form.querySelector('.cf-status');
     var submitBtn = form.querySelector('.cf-submit');
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
+      // require at least one box ticked in any data-require-group container
+      var groupFail = null;
+      form.querySelectorAll('[data-require-group]').forEach(function (g) {
+        if (!g.querySelector('input:checked')) groupFail = g;
+      });
+      if (groupFail) {
+        groupFail.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        status.textContent = groupFail.getAttribute('data-require-group');
+        status.className = 'cf-status err';
+        return;
+      }
       status.className = 'cf-status';
       submitBtn.disabled = true;
-      var data = Object.fromEntries(new FormData(form).entries());
+      var data = {};
+      new FormData(form).forEach(function (v, k) {
+        data[k] = (data[k] !== undefined) ? data[k] + ', ' + v : v;
+      });
       fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(data)
       }).then(function (r) { return r.json(); }).then(function (res) {
         if (res.success) {
-          status.textContent = 'Thanks — your message has been sent. We’ll be in touch soon.';
+          status.textContent = form.getAttribute('data-success') || 'Thanks — your message has been sent. We’ll be in touch soon.';
           status.className = 'cf-status ok';
           form.reset();
+          status.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
           throw new Error(res.message || 'error');
         }
@@ -81,5 +95,5 @@
         status.className = 'cf-status err';
       }).finally(function () { submitBtn.disabled = false; });
     });
-  }
+  });
 })();

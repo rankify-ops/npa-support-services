@@ -46,6 +46,13 @@
   var yr = document.getElementById('year');
   if (yr) yr.textContent = new Date().getFullYear();
 
+  // Highlight current page in nav + drawer (handles /about and /about.html)
+  var here = (location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '') || 'index';
+  document.querySelectorAll('.nav-l a, .mdrawer-list a').forEach(function (a) {
+    var target = (a.getAttribute('href') || '').split('#')[0].replace(/\.html$/, '');
+    if (target && target === here) a.classList.add('active');
+  });
+
   // Contact form (Web3Forms)
   var form = document.getElementById('contactForm');
   if (form) {

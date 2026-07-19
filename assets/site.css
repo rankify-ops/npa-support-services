@@ -42,7 +42,7 @@ img,svg{max-width:100%;display:block}
 .fade.vis{opacity:1;transform:translateY(0)}
 
 /* ================ NAV (green top, glass on scroll) ================ */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:12px 0;transition:all .3s ease;background:rgba(39,73,59,.85);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:12px 0;transition:all .3s ease;background:rgba(28,54,44,.97);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid rgba(255,255,255,.06)}
 .nav.scrolled{background:rgba(255,255,255,.72);backdrop-filter:blur(28px) saturate(1.8);-webkit-backdrop-filter:blur(28px) saturate(1.8);border-bottom:1px solid rgba(39,73,59,.14);padding:8px 0;box-shadow:0 4px 30px rgba(40,60,30,.07)}
 .nav-in{max-width:var(--ctr-max);margin:0 auto;padding:0 clamp(22px,4vw,64px);display:flex;align-items:center;justify-content:space-between;gap:16px}
 .logo{display:flex;align-items:center;gap:11px}

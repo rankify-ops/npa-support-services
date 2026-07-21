@@ -85,7 +85,7 @@
       <article class="svc-card fade">
         <div class="svc-ico i1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>1. Submit the form</h3>
-        <p>Complete the referral form below with participant details, the service you’re requesting, and any relevant background. Supporting documents such as an NDIS plan, reports or behaviour support plans can be emailed to us after you submit.</p>
+        <p>Choose the referral type below and complete the secure form with participant details and any relevant background — it goes straight into our practice system.</p>
       </article>
       <article class="svc-card fade">
         <div class="svc-ico i2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3" stroke-linecap="round"/></svg></div>
@@ -107,154 +107,42 @@
     <div class="sec-c fade">
       <span class="sec-tag">Referral form</span>
       <h2 class="sec-t">Start your referral</h2>
-      <p class="sec-sub">The secure referral form will appear below. Your information is treated confidentially and only used to provide safe, appropriate supports.</p>
+      <p class="sec-sub">Choose the service you’re referring for, then complete the secure form below. Referrals go straight into our practice system and waitlist, so nothing gets missed.</p>
     </div>
 
     <!-- ============================================================
-         SPLOSE EMBED GOES HERE
-         Once the embeddable "Referral form" is built and made public
-         in Splose (Settings → Automation → Form → New embeddable form),
-         paste the Splose "Embed code" between the markers below and
-         delete the placeholder .form-placeholder block.
+         SPLOSE REFERRAL FORMS (live) — PBS + Support Coordination
          ============================================================ -->
     <div class="form-embed fade">
       <!-- SPLOSE:EMBED-START -->
-      <form class="contact-form" id="referralForm" data-w3form data-success="Thank you — your referral has been received. NPA Support Services will review the information and contact you to discuss suitability, availability and next steps." novalidate style="max-width:none">
-        <input type="hidden" name="access_key" value="cd192ee0-db9c-4279-b686-ec1e98804daf">
-        <input type="hidden" name="subject" value="New referral — NPA Support Services website">
-        <input type="hidden" name="from_name" value="NPA Website Referral Form">
-        <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off">
-
-        <div class="cf-legend">Participant details</div>
-        <div class="cf-row">
-          <div class="cf-field">
-            <label for="rf-pname">Participant full name *</label>
-            <input type="text" id="rf-pname" name="participant_name" required>
-          </div>
-          <div class="cf-field">
-            <label for="rf-dob">Participant date of birth *</label>
-            <input type="date" id="rf-dob" name="participant_dob" required>
-          </div>
-        </div>
-        <div class="cf-row">
-          <div class="cf-field">
-            <label for="rf-ndis">NDIS number (optional)</label>
-            <input type="text" id="rf-ndis" name="ndis_number" placeholder="e.g. 430000000">
-          </div>
-          <div class="cf-field">
-            <label for="rf-suburb">Participant suburb / location *</label>
-            <input type="text" id="rf-suburb" name="participant_suburb" required>
-          </div>
-        </div>
-
-        <div class="cf-legend">Contact person</div>
-        <div class="cf-row">
-          <div class="cf-field">
-            <label for="rf-cname">Contact person name *</label>
-            <input type="text" id="rf-cname" name="contact_name" required autocomplete="name">
-          </div>
-          <div class="cf-field">
-            <label for="rf-rel">Relationship to participant *</label>
-            <input type="text" id="rf-rel" name="relationship" placeholder="e.g. parent, support coordinator" required>
-          </div>
-        </div>
-        <div class="cf-row">
-          <div class="cf-field">
-            <label for="rf-phone">Phone number *</label>
-            <input type="tel" id="rf-phone" name="phone" required autocomplete="tel">
-          </div>
-          <div class="cf-field">
-            <label for="rf-email">Email address *</label>
-            <input type="email" id="rf-email" name="email" required autocomplete="email">
-          </div>
-        </div>
-        <div class="cf-field">
-          <label for="rf-contactpref">Preferred contact method</label>
-          <select id="rf-contactpref" name="preferred_contact">
-            <option>Either phone or email</option>
-            <option>Phone</option>
-            <option>Email</option>
-          </select>
-        </div>
-
-        <div class="cf-legend">NDIS plan</div>
-        <div class="cf-row">
-          <div class="cf-field">
-            <label for="rf-pstart">Plan start date</label>
-            <input type="date" id="rf-pstart" name="plan_start">
-          </div>
-          <div class="cf-field">
-            <label for="rf-pend">Plan end date</label>
-            <input type="date" id="rf-pend" name="plan_end">
-          </div>
-        </div>
-        <div class="cf-field">
-          <label for="rf-mgmt">Plan management type</label>
-          <select id="rf-mgmt" name="plan_management">
-            <option>Self-managed</option>
-            <option>Plan-managed</option>
-            <option>Agency-managed (NDIA)</option>
-            <option>Not sure</option>
-          </select>
-        </div>
-
-        <div class="cf-legend">Service requested</div>
-        <div class="cf-checks" data-require-group="Please select at least one service.">
-          <label class="cf-check"><input type="checkbox" name="service_requested" value="Positive Behaviour Support"> Positive Behaviour Support</label>
-          <label class="cf-check"><input type="checkbox" name="service_requested" value="Support Coordination"> Support Coordination</label>
-          <label class="cf-check"><input type="checkbox" name="service_requested" value="Specialist Support Coordination"> Specialist Support Coordination</label>
-        </div>
-
-        <div class="cf-legend">About the referral</div>
-        <div class="cf-field">
-          <label for="rf-reason">Brief reason for referral *</label>
-          <textarea id="rf-reason" name="reason_for_referral" rows="4" required></textarea>
-        </div>
-        <div class="cf-field">
-          <label for="rf-behaviours">Current behaviours of concern or risks</label>
-          <textarea id="rf-behaviours" name="behaviours_or_risks" rows="4"></textarea>
-        </div>
-        <div class="cf-row">
-          <div class="cf-field">
-            <label for="rf-rp">Are restrictive practices currently used?</label>
-            <select id="rf-rp" name="restrictive_practices">
-              <option>Unsure</option>
-              <option>Yes</option>
-              <option>No</option>
-            </select>
-          </div>
-          <div class="cf-field">
-            <label for="rf-urgency">Urgency level</label>
-            <select id="rf-urgency" name="urgency">
-              <option>Standard</option>
-              <option>Soon — within the next few weeks</option>
-              <option>High — situation is escalating</option>
-            </select>
-          </div>
-        </div>
-        <div class="cf-field">
-          <label for="rf-providers">Current providers involved</label>
-          <textarea id="rf-providers" name="current_providers" rows="3" placeholder="e.g. OT, speech therapist, psychologist, support workers"></textarea>
-        </div>
-        <div class="cf-field">
-          <label for="rf-school">Current school / day program / SIL provider (if relevant)</label>
-          <input type="text" id="rf-school" name="school_program_sil">
-        </div>
-
-        <div class="cf-docs-note">
-          <strong>Supporting documents:</strong> after submitting this form, please email any relevant documents — NDIS plan, Behaviour Support Plan, FBA, OT or psychology reports, functional capacity assessments, risk assessments, incident reports, school reports or medication information — to <a href="mailto:nadia@npasupportservices.com.au" style="color:var(--brand-dark);font-weight:700;text-decoration:underline">nadia@npasupportservices.com.au</a> with the participant&rsquo;s name in the subject line.
-        </div>
-
-        <div class="cf-consent">
-          <label class="cf-check"><input type="checkbox" name="consent_confirmed" value="Yes" required> I confirm I have consent or authority to provide this referral information to NPA Support Services. *</label>
-        </div>
-
-        <p class="cf-note">NPA Support Services is not an emergency or crisis response service. If there is an immediate risk of harm, please call 000.</p>
-        <button type="submit" class="btn-p cf-submit">Submit Referral
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="18" height="18"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="cf-status" role="status" aria-live="polite"></div>
-      </form>
+      <div class="splose-tabs" role="tablist">
+        <button class="splose-tab active" id="tab-pbs" role="tab" aria-selected="true" onclick="switchReferralForm('pbs')">Positive Behaviour Support</button>
+        <button class="splose-tab" id="tab-sc" role="tab" aria-selected="false" onclick="switchReferralForm('sc')">Support Coordination</button>
+      </div>
+      <p class="splose-note">Referring for Specialist Support Coordination? Use the Support Coordination form and mention Specialist Support Coordination in your referral.</p>
+      <div class="splose-frame" id="frame-pbs">
+        <iframe src="https://npa-support-services.splose.com/public-form/452b2577-997a-4104-87d0-43651cd2dfba" name="embeddableForm" title="Positive Behaviour Support referral form" scrolling="auto" loading="lazy"></iframe>
+      </div>
+      <div class="splose-frame" id="frame-sc" style="display:none">
+        <iframe data-src="https://npa-support-services.splose.com/public-form/39b941c2-b121-435d-96a7-b6077ed4e72a" name="embeddableForm" title="Support Coordination referral form" scrolling="auto" loading="lazy"></iframe>
+      </div>
+      <script>
+      function switchReferralForm(key){
+        ['pbs','sc'].forEach(function(k){
+          var on = k===key;
+          document.getElementById('frame-'+k).style.display = on?'block':'none';
+          var t=document.getElementById('tab-'+k);
+          t.classList.toggle('active',on);
+          t.setAttribute('aria-selected',on?'true':'false');
+        });
+        var fr=document.querySelector('#frame-'+key+' iframe');
+        if(fr && !fr.src && fr.dataset.src) fr.src=fr.dataset.src;
+      }
+      (function(){
+        var q=new URLSearchParams(location.search).get('form')||location.hash.replace('#','');
+        if(q==='sc'||q==='ssc') switchReferralForm('sc');
+      })();
+      </script>
       <!-- SPLOSE:EMBED-END -->
     </div>
 
@@ -273,7 +161,7 @@
         <p>Person-centred Positive Behaviour Support, Support Coordination and Specialist Support Coordination for NDIS participants across Melbourne and Victoria.</p>
         <div class="footer-ndis">
           <img class="fn-logo" src="images/ndis-registered-provider.webp" alt="Registered NDIS Provider">
-          <span class="fn-reg">NDIS Reg. No: 4053538676</span>
+          <span class="fn-reg">ABN 29 820 715 483</span>
         </div>
       </div>
       <div>

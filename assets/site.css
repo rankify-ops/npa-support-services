@@ -40,6 +40,27 @@ img,svg{max-width:100%;display:block}
 /* fade-in */
 .fade{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .fade.vis{opacity:1;transform:translateY(0)}
+/* forms & embeds must never be hidden by animation */
+.form-embed.fade,.contact-form.fade{opacity:1;transform:none}
+
+/* ================ REFERRAL MODAL ================ */
+.ref-modal{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;padding:20px}
+.ref-modal.open{display:flex}
+.ref-modal-backdrop{position:absolute;inset:0;background:rgba(28,54,44,.75);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.ref-modal-dialog{position:relative;width:100%;max-width:760px;height:min(88vh,900px);background:#f7f5ee;border-radius:20px;box-shadow:0 24px 80px rgba(0,0,0,.3);display:flex;flex-direction:column;overflow:hidden}
+.ref-modal-head{padding:18px 60px 14px 24px;flex-shrink:0}
+.ref-modal-title{font-size:1.05rem;font-weight:800;color:var(--forest);margin-bottom:12px}
+.ref-modal-close{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid var(--g200);color:var(--g600);font-size:1.3rem;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;font-family:inherit;transition:all .2s;z-index:2}
+.ref-modal-close:hover{background:var(--forest);border-color:var(--forest);color:#fff}
+.ref-modal .splose-tabs{justify-content:flex-start;margin-bottom:8px}
+.ref-modal .splose-tab{padding:10px 20px;font-size:.85rem}
+.ref-modal .splose-note{text-align:left;margin-bottom:0}
+.ref-modal-body{flex:1;position:relative;background:#fff}
+.ref-modal-body iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media(max-width:560px){
+  .ref-modal{padding:0}
+  .ref-modal-dialog{height:100%;max-width:none;border-radius:0}
+}
 
 /* ================ NAV (green top, glass on scroll) ================ */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:12px 0;transition:all .3s ease;background:rgba(28,54,44,.97);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid rgba(255,255,255,.06)}

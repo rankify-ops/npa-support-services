@@ -41,10 +41,88 @@
   } else {
     faders.forEach(function (el) { el.classList.add('vis'); });
   }
+  // Failsafe: content must never stay hidden if the observer misbehaves
+  setTimeout(function () {
+    document.querySelectorAll('.fade:not(.vis)').forEach(function (el) { el.classList.add('vis'); });
+  }, 2000);
 
   // Current year in footer
   var yr = document.getElementById('year');
   if (yr) yr.textContent = new Date().getFullYear();
+
+  // ─── Referral modal (Splose forms) ───
+  var SPLOSE_FORMS = {
+    pbs: { label: 'Positive Behaviour Support', url: 'https://npa-support-services.splose.com/public-form/452b2577-997a-4104-87d0-43651cd2dfba' },
+    sc:  { label: 'Support Coordination', url: 'https://npa-support-services.splose.com/public-form/39b941c2-b121-435d-96a7-b6077ed4e72a' }
+  };
+
+  function buildReferralModal() {
+    if (document.getElementById('refModal')) return;
+    var m = document.createElement('div');
+    m.id = 'refModal';
+    m.className = 'ref-modal';
+    m.setAttribute('role', 'dialog');
+    m.setAttribute('aria-modal', 'true');
+    m.setAttribute('aria-label', 'Make a referral');
+    m.innerHTML =
+      '<div class="ref-modal-backdrop" data-ref-close></div>' +
+      '<div class="ref-modal-dialog">' +
+        '<button class="ref-modal-close" data-ref-close aria-label="Close">&times;</button>' +
+        '<div class="ref-modal-head">' +
+          '<div class="ref-modal-title">Make a Referral</div>' +
+          '<div class="splose-tabs" role="tablist">' +
+            '<button class="splose-tab active" id="rm-tab-pbs" role="tab" onclick="window.__refTab(\'pbs\')">Positive Behaviour Support</button>' +
+            '<button class="splose-tab" id="rm-tab-sc" role="tab" onclick="window.__refTab(\'sc\')">Support Coordination</button>' +
+          '</div>' +
+          '<p class="splose-note">Specialist Support Coordination? Use the Support Coordination form and mention it in your referral.</p>' +
+        '</div>' +
+        '<div class="ref-modal-body">' +
+          '<iframe id="rm-frame-pbs" title="Positive Behaviour Support referral form" scrolling="auto"></iframe>' +
+          '<iframe id="rm-frame-sc" title="Support Coordination referral form" scrolling="auto" style="display:none"></iframe>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(m);
+    m.addEventListener('click', function (e) {
+      if (e.target.closest('[data-ref-close]')) closeReferralModal();
+    });
+  }
+
+  window.__refTab = function (key) {
+    ['pbs', 'sc'].forEach(function (k) {
+      var on = k === key;
+      var fr = document.getElementById('rm-frame-' + k);
+      fr.style.display = on ? 'block' : 'none';
+      if (on && !fr.src) fr.src = SPLOSE_FORMS[k].url;
+      var t = document.getElementById('rm-tab-' + k);
+      t.classList.toggle('active', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+  };
+
+  function openReferralModal(key) {
+    buildReferralModal();
+    window.__refTab(key === 'sc' || key === 'ssc' ? 'sc' : 'pbs');
+    document.getElementById('refModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeReferralModal() {
+    var m = document.getElementById('refModal');
+    if (m) m.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeReferralModal();
+  });
+
+  // Any link to referrals.html opens the popup instead (page remains as no-JS fallback)
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href*="referrals.html"]');
+    if (!a || a.hasAttribute('data-no-modal')) return;
+    e.preventDefault();
+    setDrawer(false);
+    var q = (a.getAttribute('href').split('form=')[1] || '').replace(/[^a-z]/g, '');
+    openReferralModal(q);
+  });
 
   // Highlight current page in nav + drawer (handles /about and /about.html)
   var here = (location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '') || 'index';

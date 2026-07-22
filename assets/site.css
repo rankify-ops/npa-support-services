@@ -249,6 +249,7 @@ img,svg{max-width:100%;display:block}
 .about-photo{position:relative}
 .about-photo-inner{aspect-ratio:4/5;border-radius:var(--r);background:linear-gradient(160deg,var(--brand-light),#fff);border:1px solid var(--card-border);box-shadow:var(--shadow-l);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
 .about-photo-inner .ap-mono{font-size:6rem;font-weight:800;color:var(--brand);opacity:.28;letter-spacing:-.04em}
+.about-photo-inner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
 .about-photo-tag{position:absolute;bottom:18px;left:18px;right:18px;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow)}
 .about-photo-tag strong{display:block;color:var(--forest);font-size:.98rem}
 .about-photo-tag span{font-size:.8rem;color:var(--g500)}

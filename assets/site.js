@@ -74,7 +74,7 @@
             '<button class="splose-tab active" id="rm-tab-pbs" role="tab" onclick="window.__refTab(\'pbs\')">Positive Behaviour Support</button>' +
             '<button class="splose-tab" id="rm-tab-sc" role="tab" onclick="window.__refTab(\'sc\')">Support Coordination</button>' +
           '</div>' +
-          '<p class="splose-note">Specialist Support Coordination? Use the Support Coordination form and mention it in your referral.</p>' +
+          '<p class="splose-note" id="rm-ssc-note" style="display:none">Specialist Support Coordination? Use the Support Coordination form and mention it in your referral.</p>' +
         '</div>' +
         '<div class="ref-modal-body">' +
           '<iframe id="rm-frame-pbs" title="Positive Behaviour Support referral form" scrolling="auto"></iframe>' +
@@ -97,6 +97,8 @@
       t.classList.toggle('active', on);
       t.setAttribute('aria-selected', on ? 'true' : 'false');
     });
+    var note = document.getElementById('rm-ssc-note');
+    if (note) note.style.display = key === 'sc' ? 'block' : 'none';
   };
 
   function openReferralModal(key) {

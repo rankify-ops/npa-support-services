@@ -325,7 +325,7 @@ img,svg{max-width:100%;display:block}
 .cf-row .cf-field input,.cf-row .cf-field select{margin-top:auto}
 .cf-field{margin-bottom:16px}
 .cf-field label{display:block;font-size:.85rem;font-weight:700;color:var(--forest);margin-bottom:7px}
-.cf-field input,.cf-field select,.cf-field textarea{width:100%;padding:13px 16px;border:1.5px solid var(--g200);border-radius:var(--rs);font-size:.95rem;font-family:inherit;color:var(--g900);background:rgba(255,255,255,.85);transition:border-color .2s,box-shadow .2s;appearance:none;-webkit-appearance:none}
+.cf-field input:not([type="checkbox"]):not([type="radio"]),.cf-field select,.cf-field textarea{width:100%;padding:13px 16px;border:1.5px solid var(--g200);border-radius:var(--rs);font-size:.95rem;font-family:inherit;color:var(--g900);background:rgba(255,255,255,.85);transition:border-color .2s,box-shadow .2s;appearance:none;-webkit-appearance:none}
 .cf-field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%234a4f40' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:42px}
 .cf-field textarea{resize:vertical;min-height:120px}
 .cf-field input:focus,.cf-field select:focus,.cf-field textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-glow)}
@@ -334,7 +334,8 @@ img,svg{max-width:100%;display:block}
 .cf-legend:first-of-type{margin-top:0}
 .cf-checks{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
 .cf-check{display:flex;align-items:flex-start;gap:10px;font-size:.92rem;color:var(--g700);cursor:pointer;line-height:1.45}
-.cf-check input{width:18px;height:18px;margin-top:2px;accent-color:var(--brand);flex-shrink:0;cursor:pointer}
+.cf-check input{appearance:auto;-webkit-appearance:auto;width:18px;height:18px;padding:0;margin:0;accent-color:var(--brand);flex-shrink:0;cursor:pointer}
+.cf-check{align-items:center}
 .cf-consent{background:var(--brand-light);border:1px solid rgba(111,143,63,.25);border-radius:var(--rs);padding:16px 18px;margin-bottom:18px}
 .cf-consent .cf-check{font-weight:600;color:var(--forest)}
 .cf-docs-note{background:rgba(255,255,255,.75);border:1px dashed var(--g300);border-radius:var(--rs);padding:16px 18px;margin-bottom:18px;font-size:.85rem;color:var(--g600);line-height:1.6}

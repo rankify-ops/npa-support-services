@@ -321,6 +321,8 @@ img,svg{max-width:100%;display:block}
 .contact-form{max-width:720px;margin:0 auto;background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--r);padding:clamp(28px,4vw,44px);backdrop-filter:blur(16px) saturate(1.5);-webkit-backdrop-filter:blur(16px) saturate(1.5);box-shadow:var(--shadow-l)}
 .hp-field{display:none}
 .cf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cf-row .cf-field{display:flex;flex-direction:column}
+.cf-row .cf-field input,.cf-row .cf-field select{margin-top:auto}
 .cf-field{margin-bottom:16px}
 .cf-field label{display:block;font-size:.85rem;font-weight:700;color:var(--forest);margin-bottom:7px}
 .cf-field input,.cf-field select,.cf-field textarea{width:100%;padding:13px 16px;border:1.5px solid var(--g200);border-radius:var(--rs);font-size:.95rem;font-family:inherit;color:var(--g900);background:rgba(255,255,255,.85);transition:border-color .2s,box-shadow .2s;appearance:none;-webkit-appearance:none}

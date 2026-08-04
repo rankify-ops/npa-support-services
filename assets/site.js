@@ -50,11 +50,8 @@
   var yr = document.getElementById('year');
   if (yr) yr.textContent = new Date().getFullYear();
 
-  // ─── Referral modal (Splose forms) ───
-  var SPLOSE_FORMS = {
-    pbs: { label: 'Positive Behaviour Support', url: 'https://npa-support-services.splose.com/public-form/452b2577-997a-4104-87d0-43651cd2dfba' },
-    sc:  { label: 'Support Coordination', url: 'https://npa-support-services.splose.com/public-form/39b941c2-b121-435d-96a7-b6077ed4e72a' }
-  };
+  // ─── Referral modal (Splose PBS form) ───
+  var SPLOSE_PBS_URL = 'https://npa-support-services.splose.com/public-form/452b2577-997a-4104-87d0-43651cd2dfba';
 
   function buildReferralModal() {
     if (document.getElementById('refModal')) return;
@@ -69,16 +66,10 @@
       '<div class="ref-modal-dialog">' +
         '<button class="ref-modal-close" data-ref-close aria-label="Close">&times;</button>' +
         '<div class="ref-modal-head">' +
-          '<div class="ref-modal-title">Make a Referral</div>' +
-          '<div class="splose-tabs" role="tablist">' +
-            '<button class="splose-tab active" id="rm-tab-pbs" role="tab" onclick="window.__refTab(\'pbs\')">Positive Behaviour Support</button>' +
-            '<button class="splose-tab" id="rm-tab-sc" role="tab" onclick="window.__refTab(\'sc\')">Support Coordination</button>' +
-          '</div>' +
-          '<p class="splose-note" id="rm-ssc-note" style="display:none">Specialist Support Coordination? Use the Support Coordination form and mention it in your referral.</p>' +
+          '<div class="ref-modal-title">Make a Referral — Positive Behaviour Support</div>' +
         '</div>' +
         '<div class="ref-modal-body">' +
           '<iframe id="rm-frame-pbs" title="Positive Behaviour Support referral form" scrolling="auto"></iframe>' +
-          '<iframe id="rm-frame-sc" title="Support Coordination referral form" scrolling="auto" style="display:none"></iframe>' +
         '</div>' +
       '</div>';
     document.body.appendChild(m);
@@ -87,23 +78,10 @@
     });
   }
 
-  window.__refTab = function (key) {
-    ['pbs', 'sc'].forEach(function (k) {
-      var on = k === key;
-      var fr = document.getElementById('rm-frame-' + k);
-      fr.style.display = on ? 'block' : 'none';
-      if (on && !fr.src) fr.src = SPLOSE_FORMS[k].url;
-      var t = document.getElementById('rm-tab-' + k);
-      t.classList.toggle('active', on);
-      t.setAttribute('aria-selected', on ? 'true' : 'false');
-    });
-    var note = document.getElementById('rm-ssc-note');
-    if (note) note.style.display = key === 'sc' ? 'block' : 'none';
-  };
-
-  function openReferralModal(key) {
+  function openReferralModal() {
     buildReferralModal();
-    window.__refTab(key === 'sc' || key === 'ssc' ? 'sc' : 'pbs');
+    var fr = document.getElementById('rm-frame-pbs');
+    if (!fr.src) fr.src = SPLOSE_PBS_URL;
     document.getElementById('refModal').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -122,8 +100,7 @@
     if (!a || a.hasAttribute('data-no-modal')) return;
     e.preventDefault();
     setDrawer(false);
-    var q = (a.getAttribute('href').split('form=')[1] || '').replace(/[^a-z]/g, '');
-    openReferralModal(q);
+    openReferralModal();
   });
 
   // Highlight current page in nav + drawer (handles /about and /about.html)

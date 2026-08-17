@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://www.npasupportservices.com.au/sitemap.xml
+Disallow: /
